@@ -3,17 +3,13 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 // Instead of (and using {props.title}): const Header = (props) => {
-const Header = ({ title }) => {
-  const onClick = () => {
-    console.log('click');
-  };
-
+const Header = ({ title, onBtnClick }) => {
   return (
     <header className="header">
       {/* <h1 style={{ color: 'red', backgroundColor: '#000' }}>{title}</h1> */}
       {/* <h1 style={headingStyle}>{title}</h1> */}
       <h1>{title}</h1>
-      <Button color="green" text="Add" onClick={onClick} />
+      <Button color="green" text="Add" onClick={onBtnClick} />
     </header>
   );
 };
@@ -27,7 +23,7 @@ Header.propTypes = {
 };
 
 // CSS in JS
-// const HeadingStyle = {
+// const headingStyle = {
 //   color: 'red',
 //   backgroundColor: '#000',
 // };
