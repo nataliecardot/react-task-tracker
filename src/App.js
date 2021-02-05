@@ -27,10 +27,25 @@ const App = () => {
   };
 
   // Add task
-  const addTask = (task) => {
-    const id = Math.floor(Math.random() * 10000);
-    const newTask = { id, ...task };
-    setTasks([...tasks, newTask]);
+  const addTask = async (task) => {
+    // Allow it to persist to backend
+    const res = await fetch('http://localhost:5000/tasks', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(task),
+    });
+
+    // Data that's returned is newly added task
+    const data = await res.json();
+
+    setTasks([...tasks, data]);
+
+    // No longer needed since JSON Server automatically creates id
+    // const id = Math.floor(Math.random() * 10000);
+    // const newTask = { id, ...task };
+    // setTasks([...tasks, newTask]);
   };
 
   // Delete task
