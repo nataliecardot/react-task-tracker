@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 
@@ -99,6 +100,7 @@ const App = () => {
       ) : (
         'No tasks to display.'
       )}
+      <Footer />
     </div>
   );
 };
