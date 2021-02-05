@@ -6,8 +6,13 @@ const Tasks = ({ tasks, onDelete, onToggle }) => {
     // setTasks([...tasks, {}])
     // You couldn't do tasks.push() because state is immutable; recreate it and send it down - don't directly change; it's one-way data
     <>
-      {tasks.map((task, index) => (
-        <Task key={index} task={task} onDelete={onDelete} onToggle={onToggle} />
+      {tasks.map((task) => (
+        <Task
+          key={task.id}
+          task={task}
+          onDelete={onDelete}
+          onToggle={onToggle}
+        />
       ))}
     </>
   );
