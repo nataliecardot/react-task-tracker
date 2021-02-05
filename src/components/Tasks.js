@@ -8,6 +8,7 @@ const Tasks = ({ tasks, onDelete, onToggle }) => {
     <>
       {tasks.map((task) => (
         <Task
+          // id is automatically assigned by JSON Server
           key={task.id}
           task={task}
           onDelete={onDelete}
