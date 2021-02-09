@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+// React Router vs react-router-dom: https://stackoverflow.com/questions/42684809/react-router-vs-react-router-dom-when-to-use-one-or-the-other
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -100,7 +101,7 @@ const App = () => {
         <Route
           path="/"
           exact
-          // "The props are passed to the render prop method by the Route component. You can see this in the React Router source code. The props passed by the Route component have match, location, history, staticContext. If you want to use props from the parent component, where you are defining the render props method then you can omit the props argument." https://stackoverflow.com/questions/52070532/render-props-react-route
+          // "The props are passed to the render prop method by the Route component. You can see this in the React Router source code. The props passed by the Route component have match, location, history, staticContext. If you want to use props from the parent component where you are defining the render props method, then you can omit the props argument." https://stackoverflow.com/questions/52070532/render-props-react-route
           render={(props) => (
             <>
               {showAddTask && <AddTask onAdd={addTask} />}
